@@ -7,7 +7,7 @@ const username = localStorage.getItem("username") || "Guest";
 document.getElementById("room-title").textContent = `Room: ${room}`;
 
 // Connect to WebSocket server
-const ws = new WebSocket(`ws://localhost:3000?room=${room}&user=${username}`);
+const ws = new WebSocket(`wss://chatterbox-backend-byqq.onrender.com?room=${room}&user=${username}`);
 
 // Debug: confirm connection
 ws.onopen = () => {
