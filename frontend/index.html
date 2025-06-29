@@ -35,7 +35,7 @@
       const username = document.getElementById('usernameInput').value.trim();
       if (username) {
         localStorage.setItem('username', username);
-        window.location.href = 'index.html';
+        window.location.href = 'join.html';
       } else {
         alert("Please enter a username.");
       }
@@ -44,7 +44,7 @@
     function joinAsGuest() {
       const guest = "Guest-" + Math.floor(Math.random() * 10000);
       localStorage.setItem('username', guest);
-      window.location.href = 'index.html';
+      window.location.href = 'join.html';
     }
   </script>
 </body>
