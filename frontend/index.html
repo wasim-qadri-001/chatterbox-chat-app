@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chatterbox Rooms</title>
-  <link rel="stylesheet" href="frontend/styles.css" />
+  <meta charset="UTF-8">
+  <title>Join Chatterbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="frontend/styles.css">
 </head>
 <body>
   <header class="app-header">
     <h1>🗨️ Chatterbox Rooms</h1>
   </header>
 
-  <main class="main-container">
-    <h2 class="welcome">Welcome, <span id="username">Guest</span>!</h2>
-    <p>Create a new chat room or join an existing one.</p>
+  <main class="join-container">
+    <div class="card join-card">
+      <div class="avatar">
+        <img src="https://img.icons8.com/ios-filled/50/000000/user-male-circle.png" alt="user-icon" />
+      </div>
+      <h2>Join Chatterbox</h2>
+      <p>Enter a username or join as a guest to start chatting.</p>
 
-    <div class="room-actions">
-      <div class="card">
-        <h3>➕ Create New Room</h3>
-        <input type="text" id="roomName" placeholder="E.g., Weekend Plans" />
-        <button onclick="createRoom()">Create Room</button>
-      </div>
-      <div class="card">
-        <h3>➡️ Join Existing Room</h3>
-        <input type="text" id="roomId" placeholder="Enter Room ID" />
-        <button onclick="joinRoom()">Join Room</button>
-      </div>
+      <input type="text" id="usernameInput" placeholder="E.g., ChattyCathy" />
+      <button onclick="joinWithUsername()" class="btn primary">👤 Join with Username</button>
+      <div class="divider">OR</div>
+      <button onclick="joinAsGuest()" class="btn ghost">👻 Join as Guest</button>
     </div>
   </main>
 
@@ -33,6 +30,22 @@
     <p>&copy; 2025 Chatterbox. All rights reserved.</p>
   </footer>
 
-  <script src="frontend/script.js"></script>
+  <script>
+    function joinWithUsername() {
+      const username = document.getElementById('usernameInput').value.trim();
+      if (username) {
+        localStorage.setItem('username', username);
+        window.location.href = 'index.html';
+      } else {
+        alert("Please enter a username.");
+      }
+    }
+
+    function joinAsGuest() {
+      const guest = "Guest-" + Math.floor(Math.random() * 10000);
+      localStorage.setItem('username', guest);
+      window.location.href = 'index.html';
+    }
+  </script>
 </body>
 </html>
