@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chatterbox Rooms</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🗨️ Chatterbox Rooms</h1>
+  </header>
+
+  <main class="main-container">
+    <h2 class="welcome">Welcome, <span id="username">Guest</span>!</h2>
+    <p>Create a new chat room or join an existing one.</p>
+
+    <div class="room-actions">
+      <div class="card">
+        <h3>➕ Create New Room</h3>
+        <input type="text" id="roomName" placeholder="E.g., Weekend Plans" />
+        <button onclick="createRoom()">Create Room</button>
+      </div>
+      <div class="card">
+        <h3>➡️ Join Existing Room</h3>
+        <input type="text" id="roomId" placeholder="Enter Room ID" />
+        <button onclick="joinRoom()">Join Room</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2025 Chatterbox. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
